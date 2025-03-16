@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Bath, Bed } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-//data for flat
+// Data for flat listings
 const flats = [
   {
     title: "Luxury Apartment",
@@ -34,54 +34,68 @@ const flats = [
 
 export const LatestProperties = () => {
   return (
-    <section className="w-full h-screen flex flex-col items-center justify-center">
-      <div className="max-w-6xl mx-auto px-10 flex gap-3 items-center ">
-        {/* vertical text 
-        <div className="-rotate-90 flex items-center gap-3">
+    <section className="w-full min-h-screen px-5 flex flex-col items-center justify-center">
+      <div className="max-w-6xl mx-auto md:pl-20 pl-0 flex gap-0 items-center relative">
+        {/* Vertical Text */}
+        <div className="-rotate-90 absolute top-32 -left-14 hidden md:flex items-center gap-3">
           <div className="h-[1.5px] w-[60px] rounded bg-black"></div>
           <h2 className="uppercase font-semibold tracking-[2px]">Properties</h2>
-        </div> */}
+        </div>
 
-        {/* properties section  */}
-        <div>
-          <h1 className="text-3xl font-semibold uppercase">
-            explore the latest properties <br />
+        {/* Properties Section */}
+        <div className="md:space-y-4 space-y-2 py-10 w-full">
+
+          <h1 className="text-2xl md:text-3xl font-semibold uppercase text-center md:text-left">
+            Explore the latest properties <br className="hidden md:block" />
             and select your home
           </h1>
 
-          {/* properties cards  */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {flats.map((flat, index) => {
-              return (
-                <div
-                  className="rounded-xl overflow-hidden shadow-lg"
-                  key={index}
-                >
-                  <Image src={HomeImage} className="w-full h-52" />
-                  <div className="p-4 space-y-2">
-                    <h1 className="text-xl font-semibold">{flat.title}</h1>
-                    <h3 className="text-xl font-semibold">${flat.rent}</h3>
-                    <p className="text-sm">{flat.description}</p>
+          {/* Properties Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 md:px-0">
+            {flats.map((flat, index) => (
+              <div
+                key={index}
+                className="rounded-xl overflow-hidden shadow-lg bg-white"
+              >
+                <Image
+                  src={HomeImage}
+                  width={350}
+                  height={250}
+                  className="w-full h-[200px] sm:h-[250px] object-cover"
+                  alt="home_image"
+                />
+                <div className="p-4 space-y-2">
+                  <h1 className="text-xl font-semibold">{flat.title}</h1>
+                  <h3 className="text-lg font-semibold text-blue-600">
+                    ${flat.rent} / month
+                  </h3>
+                  <p className="text-sm text-gray-600">{flat.description}</p>
 
-                    <div className="flex text-sm gap-4">
-                      <h1 className="flex items-center gap-1">
-                        <Bed size={18} />
-                        {flat.bedroomNumbers} Bedroom
-                      </h1>
-                      <h1 className="flex items-center gap-1">
-                        <Bath size={18} />
-                        {flat.bathroomNumbers} Bathroom
-                      </h1>
-                    </div>
+                  <div className="flex text-sm gap-4 mt-2">
+                    <h1 className="flex items-center gap-1">
+                      <Bed size={18} />
+                      {flat.bedroomNumbers} Bedroom
+                    </h1>
+                    <h1 className="flex items-center gap-1">
+                      <Bath size={18} />
+                      {flat.bathroomNumbers} Bathroom
+                    </h1>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
 
-      <Button className={'bg-blue-500 mt-10 cursor-pointer'}>Load more listings</Button>
+          {/* Load More Button */}
+          <div className="text-center mt-6">
+            <Button className="bg-blue-500 hover:bg-blue-600 transition-all duration-200">
+              Load more listings
+            </Button>
+          </div>
+
+        </div>
+
+      </div>
     </section>
   );
 };
