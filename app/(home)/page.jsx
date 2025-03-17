@@ -4,6 +4,7 @@ import { About } from './_components/About'
 import { LatestProperties } from './_components/LatestProperties'
 import { Services } from './_components/Services'
 import { Contact } from './_components/Contact'
+import RecentEstate from './_components/RecentEstate'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <LatestProperties/>
       <Services/>
       {/* <Contact/> */}
+      <RecentEstate/>
     </div>
   )
 }
