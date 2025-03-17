@@ -13,9 +13,9 @@ export const Dashboard = () => {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 -z-[4] bg-black/40"></div>
+      <div className="absolute inset-0 -z-[4] bg-black/60"></div>
 
-      <div className="absolute w-full z-20 px-5 md:px-0 text-white flex justify-center items-center h-screen">
+      <div className="absolute w-full z-20 px-5 md:px-0 mt-10 text-white flex justify-center items-center h-screen">
         <div className="max-w-4xl text-center md:space-y-6 space-y-3">
           <h1 className="md:text-5xl text-3xl font-semibold uppercase">
             Find your dream house
