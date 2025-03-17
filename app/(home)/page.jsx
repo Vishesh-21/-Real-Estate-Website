@@ -3,8 +3,8 @@ import { Dashboard } from './_components/Dashboard'
 import { About } from './_components/About'
 import { LatestProperties } from './_components/LatestProperties'
 import { Services } from './_components/Services'
-import { Contact } from './_components/Contact'
 import RecentEstate from './_components/RecentEstate'
+import { Contact } from './_components/Contact'
 
 export default function Home() {
   return (
@@ -13,8 +13,9 @@ export default function Home() {
       <About/>
       <LatestProperties/>
       <Services/>
-      {/* <Contact/> */}
+      <Contact/>
       <RecentEstate/>
     </div>
   )
 }
+

@@ -42,7 +42,7 @@ const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-6 text-sm ">
+        <nav className="hidden md:flex space-x-10 text-sm ">
           <a href="#" className="hover:text-blue-400">
             HOME
           </a>
